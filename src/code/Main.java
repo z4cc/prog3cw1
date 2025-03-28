@@ -24,7 +24,7 @@ public class Main {
         System.out.print("Enter your choice or 0 to quit.: ");
         int choice = scanner.nextInt();
         scanner.close();
-        
+
         
         switch(choice) {
             case 1:
@@ -37,7 +37,8 @@ public class Main {
                 CircularLinkedQueueTest.runDemo();
                 break;
             case 4:
-                DFSTraversal.runDemo();
+                System.out.println("TBD");
+                //DFSTraversal.runDemo();
                 break;
             case 0:
                 System.out.println("Exiting...");

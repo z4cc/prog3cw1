@@ -40,14 +40,16 @@ public class QueueTests {
         System.out.println("\nAdding more elements...");
         queue.add("Item 4");
         queue.add("Item 5");
+        queue.add("Item 6");
         
         // Display state
-        System.out.println("Queue after adding 2 more elements: " + queue);
+        System.out.println("Queue after adding 3 more elements: " + queue);
         
         // Try to add when full (this would throw an exception)
         try {
             System.out.println("\nAttempting to add to full queue...");
-            queue.add("Item 6"); // This should throw an exception
+             // This should throw an exception
+            queue.add("Item 7");
         } catch (IllegalStateException e) {
             System.out.println("Queue is full: " + e.getMessage());
         }

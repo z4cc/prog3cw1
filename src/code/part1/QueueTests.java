@@ -19,20 +19,20 @@ public class QueueTests {
         System.out.println("\n=== ArrayBlockingQueue Demo ===");
         
         // Create instance with capacity of 5
-        ArrayBlockingQueue<String> queue = new ArrayBlockingQueue<>(5);
+        ArrayBlockingQueue<DataItem> queue = new ArrayBlockingQueue<>(5);
         
         // Add elements
         System.out.println("Adding elements...");
-        queue.add("Item 1");
-        queue.add("Item 2");
-        queue.add("Item 3");
+        queue.add(new DataItem()); // Empty constructor for "Item 1"
+        queue.add(new DataItem()); // Empty constructor for "Item 2"
+        queue.add(new DataItem()); // Empty constructor for "Item 3"
         
         // Display state
         System.out.println("Queue after adding 3 elements: " + queue);
         
         // Remove an element
         System.out.println("\nRemoving element...");
-        String removed = queue.remove();
+        DataItem removed = queue.remove();
         
         // Display state
         System.out.println("Removed: " + removed);
@@ -40,9 +40,9 @@ public class QueueTests {
         
         // Add more elements
         System.out.println("\nAdding more elements...");
-        queue.add("Item 4");
-        queue.add("Item 5");
-        queue.add("Item 6");
+        queue.add(new DataItem()); // Empty constructor for "Item 4"
+        queue.add(new DataItem()); // Empty constructor for "Item 5"
+        queue.add(new DataItem()); // Empty constructor for "Item 6"
         
         // Display state
         System.out.println("Queue after adding 3 more elements: " + queue);
@@ -50,8 +50,7 @@ public class QueueTests {
         // Try to add when full (this would throw an exception)
         try {
             System.out.println("\nAttempting to add to full queue...");
-             // This should throw an exception
-            queue.add("Item 7");
+            queue.add(new DataItem()); // Empty constructor for "Item 7"
         } catch (IllegalStateException e) {
             System.out.println("Queue is full: " + e.getMessage());
         }
@@ -60,47 +59,47 @@ public class QueueTests {
     private static void testArrayDeque() {
         System.out.println("\n=== ArrayDeque Demo ===");
         
-         // Create instance
-         ArrayDeque<String> deque = new ArrayDeque<>();
+        // Create instance
+        ArrayDeque<DataItem> deque = new ArrayDeque<>();
         
-         // Add elements at both ends
-         System.out.println("Adding elements...");
-         deque.addFirst("First A");
-         deque.addLast("Last X");
-         deque.addFirst("First B");
-         deque.addLast("Last Y");
-         
-         // Display state
-         System.out.println("Deque after additions: " + deque);
-         
-         // Remove elements from both ends
-         System.out.println("\nRemoving elements...");
-         String removedFirst = deque.removeFirst();
-         String removedLast = deque.removeLast();
-         
-         // Display state
-         System.out.println("Removed from front: " + removedFirst);
-         System.out.println("Removed from back: " + removedLast);
-         System.out.println("Deque after removals: " + deque);
+        // Add elements at both ends
+        System.out.println("Adding elements...");
+        deque.addFirst(new DataItem("First A"));
+        deque.addLast(new DataItem("Last X"));
+        deque.addFirst(new DataItem("First B"));
+        deque.addLast(new DataItem("Last Y"));
+        
+        // Display state
+        System.out.println("Deque after additions: " + deque);
+        
+        // Remove elements from both ends
+        System.out.println("\nRemoving elements...");
+        DataItem removedFirst = deque.removeFirst();
+        DataItem removedLast = deque.removeLast();
+        
+        // Display state
+        System.out.println("Removed from front: " + removedFirst);
+        System.out.println("Removed from back: " + removedLast);
+        System.out.println("Deque after removals: " + deque);
     }
 
     private static void testLinkedBlockingQueue() {
         System.out.println("\n=== LinkedBlockingQueue Demo ===");
         
         // Create instance
-        LinkedBlockingQueue<String> queue = new LinkedBlockingQueue<>();
+        LinkedBlockingQueue<DataItem> queue = new LinkedBlockingQueue<>();
         
         // Add elements
         System.out.println("Adding elements...");
-        queue.add("Item A");
-        queue.add("Item B");
+        queue.add(new DataItem()); // Empty constructor for "Item A"
+        queue.add(new DataItem()); // Empty constructor for "Item B"
         
         // Display state
         System.out.println("Queue after additions: " + queue);
         
         // Remove an element
         System.out.println("\nRemoving element...");
-        String removed = queue.remove();
+        DataItem removed = queue.remove();
         
         // Display state
         System.out.println("Removed: " + removed);
@@ -111,20 +110,20 @@ public class QueueTests {
         System.out.println("\n=== LinkedBlockingDeque Demo ===");
         
         // Create instance
-        LinkedBlockingDeque<String> deque = new LinkedBlockingDeque<>();
+        LinkedBlockingDeque<DataItem> deque = new LinkedBlockingDeque<>();
         
         // Add elements at both ends
         System.out.println("Adding elements...");
-        deque.addFirst("First 1");
-        deque.addLast("Last 1");
+        deque.addFirst(new DataItem("First 1"));
+        deque.addLast(new DataItem("Last 1"));
         
         // Display state
         System.out.println("Deque after additions: " + deque);
         
         // Remove elements from both ends
         System.out.println("\nRemoving elements...");
-        String removedFirst = deque.removeFirst();
-        String removedLast = deque.removeLast();
+        DataItem removedFirst = deque.removeFirst();
+        DataItem removedLast = deque.removeLast();
         
         // Display state
         System.out.println("Removed from front: " + removedFirst);

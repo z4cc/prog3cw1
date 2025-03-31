@@ -4,7 +4,8 @@ package code;
 import code.part1.QueueTests;
 import code.part2.CircularLinkedQueueTest;
 import code.part2.CircularQueueDemo;
-import code.part3.DFSTraversal;
+import code.part3.GraphDemo;
+
 
 import java.util.Scanner;
 
@@ -37,8 +38,7 @@ public class Main {
                 CircularLinkedQueueTest.runDemo();
                 break;
             case 4:
-                System.out.println("TBD");
-                //DFSTraversal.runDemo();
+                GraphDemo.runDemo();
                 break;
             case 0:
                 System.out.println("Exiting...");

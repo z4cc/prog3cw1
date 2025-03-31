@@ -154,15 +154,15 @@ public class GraphRepresentation {
         printAdjacencyMap(adjacencyMap);
         System.out.println();
         
+        // Create and print undirected adjacency matrix
+        int[][] undirectedMatrix = createUndirectedAdjacencyMatrix();
+        System.out.println("Undirected Graph:");
+        printAdjacencyMatrix(undirectedMatrix);
+        
         // Create and print directed adjacency matrix
         int[][] directedMatrix = createDirectedAdjacencyMatrix();
         System.out.println("Directed Graph:");
         printAdjacencyMatrix(directedMatrix);
         System.out.println();
-        
-        // Create and print undirected adjacency matrix
-        int[][] undirectedMatrix = createUndirectedAdjacencyMatrix();
-        System.out.println("Undirected Graph:");
-        printAdjacencyMatrix(undirectedMatrix);
     }
 }

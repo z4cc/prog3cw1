@@ -6,8 +6,8 @@ public class CircularQueueDemo {
     public static void demonstrateArrayDeque() {
         System.out.println("\n=== ArrayDeque Circular Queue Demo ===");
         
-        // Create an ArrayDeque with initial capacity of 8 (default)
-        ArrayDeque<String> circularQueue = new ArrayDeque<>();
+        // Create an ArrayDeque with initial capacity of 8
+        ArrayDeque<String> circularQueue = new ArrayDeque<>(8);
         
         // Add elements to fill the queue partially
         System.out.println("Adding initial elements...");
@@ -17,7 +17,7 @@ public class CircularQueueDemo {
         circularQueue.add("Item 4");
         circularQueue.add("Item 5");
         
-        // Display state (Visualization Point 1)
+        // Display state
         // At this point, the queue has 5 elements, with head at position 0
         System.out.println("Queue after adding 5 elements: " + circularQueue);
         
@@ -26,7 +26,7 @@ public class CircularQueueDemo {
         String removed1 = circularQueue.remove();
         String removed2 = circularQueue.remove();
         
-        // Display state (Visualization Point 2)
+        // Display state
         // Now the queue has 3 elements, with head at position 2
         System.out.println("Removed: " + removed1 + ", " + removed2);
         System.out.println("Queue after removals: " + circularQueue);
@@ -39,20 +39,19 @@ public class CircularQueueDemo {
         circularQueue.add("Item 8");
         circularQueue.add("Item 9");
         circularQueue.add("Item 10");
-        circularQueue.add("Item 11");
-        
-        // Display state (Visualization Point 3)
+
+        // Display state
         // The queue now has wrapped around, with some elements at the end and some at the beginning
         System.out.println("Queue after wraparound: " + circularQueue);
         
         // Remove elements until we're back to the beginning of the array
         System.out.println("\nRemoving elements to show complete rotation...");
-        for (int i = 0; i < 6; i++) {
+        for (int i = 0; i < 7; i++) {
             System.out.println("Removed: " + circularQueue.remove());
             // After each removal, you could set a breakpoint to visualize (optional)
         }
         
-        // Display state (Visualization Point 4)
+        // Display state
         // The queue now has wrapped completely, with remaining elements at the beginning
         System.out.println("Queue after complete rotation: " + circularQueue);
         
@@ -62,7 +61,7 @@ public class CircularQueueDemo {
             circularQueue.add("Item " + i);
         }
         
-        // Display state (Visualization Point 5)
+        // Display state
         // The internal array has been resized to accommodate more elements
         System.out.println("Queue after adding many elements: " + circularQueue);
     }

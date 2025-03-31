@@ -15,7 +15,7 @@ public class CircularLinkedQueueTest {
         System.out.println("\nAdding first element...");
         queue.add("Item 1");
         
-        // Display state (Visualization Point 1)
+        // Display state
         // This shows a queue with a single node that points to itself
         System.out.println("Queue after adding first element: " + queue);
         System.out.println("Queue size: " + queue.size());
@@ -26,7 +26,7 @@ public class CircularLinkedQueueTest {
         queue.add("Item 3");
         queue.add("Item 4");
         
-        // Display state (Visualization Point 2)
+        // Display state
         // This shows a queue with multiple elements forming a circle
         System.out.println("Queue after adding more elements: " + queue);
         System.out.println("Queue size: " + queue.size());
@@ -36,7 +36,7 @@ public class CircularLinkedQueueTest {
         System.out.println("\nRemoving elements...");
         String removed1 = queue.remove();
         
-        // Display state (Visualization Point 3)
+        // Display state
         // This shows how the queue looks after removing the front element
         System.out.println("Removed: " + removed1);
         System.out.println("Queue after removal: " + queue);
@@ -47,7 +47,7 @@ public class CircularLinkedQueueTest {
         queue.add("Item 5");
         queue.add("Item 6");
         
-        // Display state (Visualization Point 4)
+        // Display state
         // This shows how elements are added after some removals
         System.out.println("Queue after more additions: " + queue);
         
@@ -58,7 +58,7 @@ public class CircularLinkedQueueTest {
             // After each removal, you could set a breakpoint to visualize (optional)
         }
         
-        // Display state (Visualization Point 5)
+        // Display state
         // This shows a queue with only one element
         System.out.println("Queue with one element: " + queue);
         
@@ -66,7 +66,7 @@ public class CircularLinkedQueueTest {
         System.out.println("\nRemoving last element...");
         String removedLast = queue.remove();
         
-        // Display state (Visualization Point 6)
+        // Display state
         // This shows an empty queue after all elements have been removed
         System.out.println("Removed: " + removedLast);
         System.out.println("Queue after removing all elements: " + queue);

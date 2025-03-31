@@ -1,79 +1,20 @@
 package code.part3;
 
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 public class GraphRepresentation {
-    private static final String[] TOWNS = {
-            "Stirling", "Glasgow", "Edinburgh", "Aberdeen", "Dundee", "Inverness", "Perth", "Oban", "Fort William", "Ayr"
-    };
 
-    public static Map<String, List<String>> createAdjacencyMap() {
-        Map<String, List<String>> adjacencyMap = new HashMap<>();
-        
-        // Initialize empty lists for each town
-        for (String town : TOWNS) {
-            adjacencyMap.put(town, new ArrayList<>());
-        }
-        
-        addConnection(adjacencyMap, "Stirling", "Fort William");
-        addConnection(adjacencyMap, "Stirling", "Perth");
-
-        addConnection(adjacencyMap, "Fort William", "Ayr");
-
-        addConnection(adjacencyMap, "Glasgow", "Stirling");
-        addConnection(adjacencyMap, "Glasgow", "Inverness");
-        addConnection(adjacencyMap, "Glasgow", "Dundee");
-
-        addConnection(adjacencyMap, "Edinburgh", "Glasgow");
-        addConnection(adjacencyMap, "Edinburgh", "Aberdeen");
-
-        addConnection(adjacencyMap, "Aberdeen", "Inverness");
-        addConnection(adjacencyMap, "Aberdeen", "Perth");
-
-        addConnection(adjacencyMap, "Dundee", "Perth");
-
-        addConnection(adjacencyMap, "Inverness", "Oban");
-        addConnection(adjacencyMap, "Inverness", "Fort William");
-
-        addConnection(adjacencyMap, "Perth", "Oban");
-
-        addConnection(adjacencyMap, "Oban", "Ayr");
-
-        return adjacencyMap;
-    }
-    
-    private static void addConnection(Map<String, List<String>> adjacencyMap, String from, String to) {
-        // Check if towns exist in the map before adding
-        if (adjacencyMap.containsKey(from) && adjacencyMap.containsKey(to)) {
-            adjacencyMap.get(from).add(to);
-        } else {
-            System.err.println("Warning: Tried to add connection between non-existent towns: " 
-                                + from + " -> " + to);
-        }
-    }
-    
-    /**
-     * Prints the adjacency map representation of the graph.
-     */
-    public static void printAdjacencyMap(Map<String, List<String>> adjacencyMap) {
+    public static void printAdjacencyMap(String[] TOWNS, Map<String, List<String>> adjacencyMap) {
         System.out.println("=== Adjacency Map Representation ===");
         for (String town : TOWNS) {
             System.out.println(town + " -> " + adjacencyMap.get(town));
         }
     }
 
-    /**
-     * Creates an adjacency matrix for the directed graph.
-     * A cell [i][j] is 1 if there's a directed edge from town i to town j.
-     * 
-     * This method uses the adjacency map to build the matrix.
-     */
-    public static int[][] createDirectedAdjacencyMatrix() {
-        Map<String, List<String>> adjacencyMap = createAdjacencyMap();
+
+    public static int[][] createDirectedAdjacencyMatrix(String[] TOWNS, Map<String, List<String>> adjacencyMap) {
         int n = TOWNS.length;
         int[][] matrix = new int[n][n];
         
@@ -93,12 +34,8 @@ public class GraphRepresentation {
         return matrix;
     }
     
-    /**
-     * Creates an adjacency matrix for the undirected version of the graph.
-     * This treats all connections as bidirectional.
-     */
-    public static int[][] createUndirectedAdjacencyMatrix() {
-        Map<String, List<String>> adjacencyMap = createAdjacencyMap();
+
+    public static int[][] createUndirectedAdjacencyMatrix(String[] TOWNS, Map<String, List<String>> adjacencyMap) {
         int n = TOWNS.length;
         int[][] matrix = new int[n][n];
         
@@ -123,7 +60,7 @@ public class GraphRepresentation {
     /**
      * Prints an adjacency matrix with town labels.
      */
-    public static void printAdjacencyMatrix(int[][] matrix) {
+    public static void printAdjacencyMatrix(String[] TOWNS, Map<String, List<String>> adjacencyMap, int[][] matrix) {
         System.out.println("=== Adjacency Matrix ===");
         
         // Print header row with abbreviated town names
@@ -146,23 +83,22 @@ public class GraphRepresentation {
     /**
      * Demonstrates all graph representations.
      */
-    public static void demonstrateRepresentations() {
+    public static void demonstrateRepresentations(String[] TOWNS, Map<String, List<String>> adjacencyMap) {
         System.out.println("\n=== Graph Representation Demo ===\n");
         
         // Create and print adjacency map
-        Map<String, List<String>> adjacencyMap = createAdjacencyMap();
-        printAdjacencyMap(adjacencyMap);
+        printAdjacencyMap(TOWNS, adjacencyMap);
         System.out.println();
         
         // Create and print undirected adjacency matrix
-        int[][] undirectedMatrix = createUndirectedAdjacencyMatrix();
+        int[][] undirectedMatrix = createUndirectedAdjacencyMatrix(TOWNS, adjacencyMap);
         System.out.println("Undirected Graph:");
-        printAdjacencyMatrix(undirectedMatrix);
+        printAdjacencyMatrix(TOWNS, adjacencyMap, undirectedMatrix);
         
         // Create and print directed adjacency matrix
-        int[][] directedMatrix = createDirectedAdjacencyMatrix();
+        int[][] directedMatrix = createDirectedAdjacencyMatrix(TOWNS, adjacencyMap);
         System.out.println("Directed Graph:");
-        printAdjacencyMatrix(directedMatrix);
+        printAdjacencyMatrix(TOWNS, adjacencyMap, directedMatrix);
         System.out.println();
     }
 }

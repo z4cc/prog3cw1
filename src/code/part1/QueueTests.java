@@ -1,5 +1,7 @@
 package code.part1;
 
+import code.util.DataItem;
+
 import java.util.ArrayDeque;
 import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.LinkedBlockingDeque;

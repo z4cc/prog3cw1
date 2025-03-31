@@ -17,8 +17,6 @@ public class GraphDemo {
         // Create adjacency map
         Map<String, List<String>> adjacencyMap = createAdjacencyMap();
 
-        System.out.println("\n=== Graph Representation Demo ===");
-
         GraphRepresentation.demonstrateRepresentations(TOWNS, adjacencyMap);
 
         DFSTraversal.runDemo(adjacencyMap);

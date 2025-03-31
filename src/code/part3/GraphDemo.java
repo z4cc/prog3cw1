@@ -20,6 +20,8 @@ public class GraphDemo {
         System.out.println("\n=== Graph Representation Demo ===");
 
         GraphRepresentation.demonstrateRepresentations(TOWNS, adjacencyMap);
+
+        DFSTraversal.runDemo(adjacencyMap);
     }
 
     private static Map<String, List<String>> createAdjacencyMap() {

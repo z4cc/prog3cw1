@@ -16,6 +16,7 @@ public class QueueTests {
     }
 
     private static void testArrayBlockingQueue() {
+        DataItem.resetCounter();
         System.out.println("\n=== ArrayBlockingQueue Demo ===");
         
         // Create instance with capacity of 5
@@ -57,6 +58,7 @@ public class QueueTests {
     }
 
     private static void testArrayDeque() {
+        DataItem.resetCounter();
         System.out.println("\n=== ArrayDeque Demo ===");
         
         // Create instance
@@ -107,6 +109,7 @@ public class QueueTests {
     }
 
     private static void testLinkedBlockingDeque() {
+        DataItem.resetCounter();
         System.out.println("\n=== LinkedBlockingDeque Demo ===");
         
         // Create instance

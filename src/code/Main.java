@@ -21,7 +21,7 @@ public class Main {
         
         // Read user input and call the appropriate demo
         java.util.Scanner scanner = new java.util.Scanner(System.in);
-        System.out.print("Enter your choice or 0 to quit.: ");
+        System.out.print("Enter your choice or 0 to quit: ");
         int choice = scanner.nextInt();
         scanner.close();
 
